@@ -7,17 +7,19 @@ problemName = 'transportationProblem'
 prob = LpProblem(problemName, LpMinimize)
 
 # the costs of shipping from every supply location to every customer
-costs = {   'Townsville'    :   {'Pumpkintown' : 8,     'Asheville'     : 12,   'TR' : 10,  'Greenville' : 10,  'MtRest' : 6,       'Cola' : 9999},
+costs = {
+			'Townsville'    :   {'Pumpkintown' : 8,     'Asheville'     : 12,   'TR' : 10,  'Greenville' : 10,  'MtRest' : 6,       'Cola' : 9999},
             'Pendleton'     :   {'Pumpkintown' : 11,    'Asheville'     : 9,    'TR' : 8,   'Greenville' : 6,   'MtRest' : 9999,    'Cola' : 7},
             'Anderson'      :   {'Pumpkintown' : 15,    'Asheville'     : 10,   'TR' : 9,   'Greenville' : 5,   'MtRest' : 4,       'Cola' : 8},
             'Pickens'       :   {'Pumpkintown' : 4,     'Asheville'     : 5,    'TR' : 6,   'Greenville' : 7,   'MtRest' : 8,       'Cola' : 10},
-        }
+		}
 
 # supply limitations
-supplyAmounts = {   'Townsville' :   5000,
-                    'Pendleton' :   8000,
-                    'Anderson'  :   6500,
-                    'Pickens'   :   9500
+supplyAmounts = {
+					'Townsville' 	:   5000,
+                    'Pendleton' 	:   8000,
+                    'Anderson'  	:   6500,
+                    'Pickens'   	:   9500
                 }
 
 # demand minimums
