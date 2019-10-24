@@ -1,5 +1,6 @@
 from pulp import *
 
+# name the problem
 problemName = 'transportationProblem'
 
 # define the problem as min
@@ -32,11 +33,14 @@ demandAmounts = {   'Pumpkintown'   :   3000,
 # create and populate the list of decision variables
 decisionVars = []
 
+# make a 2D list of decision variables
 for i, fromTown in enumerate(costs):
     temp = []
     for j, toTown in enumerate(costs[fromTown]):
         variable = str('x' + str(i) + str(j))
-        variable = pulp.LpVariable(str(variable), lowBound = 0, cat= 'Integer') #make variables binary
+
+		# variables are >= 0 and integers
+        variable = pulp.LpVariable(str(variable), lowBound = 0, cat= 'Integer')
         temp.append(variable)
     decisionVars.append(temp)
 
@@ -79,8 +83,7 @@ for j, toTown in enumerate(demandAmounts):
 result = prob.solve()
 
 # assert optimal result
-# assert result == pulp.LpStatusOptimal
-
+assert result == pulp.LpStatusOptimal
 
 prob.writeLP(problemName + ".lp" )
 print("Status:", LpStatus[prob.status])
