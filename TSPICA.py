@@ -8,10 +8,11 @@ prob = LpProblem(problemName, LpMinimize)
 
 # the costs of shipping from every supply location to every customer
 costs = {
-			'Townsville'    :   {'Pumpkintown' : 8,     'Asheville'     : 12,   'TR' : 10,  'Greenville' : 10,  'MtRest' : 6,       'Cola' : 9999},
-            'Pendleton'     :   {'Pumpkintown' : 11,    'Asheville'     : 9,    'TR' : 8,   'Greenville' : 6,   'MtRest' : 9999,    'Cola' : 7},
-            'Anderson'      :   {'Pumpkintown' : 15,    'Asheville'     : 10,   'TR' : 9,   'Greenville' : 5,   'MtRest' : 4,       'Cola' : 8},
-            'Pickens'       :   {'Pumpkintown' : 4,     'Asheville'     : 5,    'TR' : 6,   'Greenville' : 7,   'MtRest' : 8,       'Cola' : 10},
+			'WareHouse'	:   {'Node1'		: 45,	'Node2' : 70,   'Node3' : 10,  'Node4' : 10},
+            'Node1'		:   {'Warehouse' 	: 45,	'Node2' : 12,   'Node3' : 10,  'Node4' : 10},
+            'Node2'    	:   {'Warehouse' 	: 45,	'Node1' : 12,   'Node3' : 10,  'Node4' : 10},
+            'Node3'    	:	{'Warehouse' 	: 45,	'Node1' : 12,   'Node2' : 10,  'Node4' : 10},
+			'Node4'    	:	{'Warehouse' 	: 45,	'Node1' : 12,   'Node2' : 10,  'Node3' : 10},
 		}
 
 # supply limitations
